@@ -1,0 +1,23 @@
+<div>
+    <button (click)="goBack()">Go Back</button>
+    <button (click)="addDog()">New Dog</button>
+    <button (click)="goForward()">Go Next</button>
+    <button (click)="addDogToFavorites()">Add to favorites</button>
+</div>
+
+<div class="image_holder">
+    <img class="landscape" src={{img}} (click)="openImage(img)"/>
+    <p id="desc">You are looking at dog {{current_dog + dogs_exist}} of {{items.length}}</p>
+</div>
+
+<div>
+    <app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
+    <div [innerHTML]="gesture"></div>    
+</div>
+
+<div>
+    <h1>My dogs</h1>
+    <div *ngFor="let item of favorites">
+        <img  class="landscape" src={{item}} (click)="openImage(item)"/>
+    </div>
+</div>

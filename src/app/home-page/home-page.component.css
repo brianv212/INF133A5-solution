@@ -1,0 +1,13 @@
+.image_holder {
+    text-align: center;
+}
+
+.landscape {
+    margin-top: 1rem;
+    height: 55vh;
+    width: 33.3333%;
+    border-radius: 10px;
+    border-color: pink;
+    border-style: solid;
+    cursor: pointer;
+}
