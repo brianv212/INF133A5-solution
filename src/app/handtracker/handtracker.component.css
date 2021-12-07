@@ -1,13 +1,48 @@
 .video {
     display: flex;
     flex-direction: row;
-    
+    overflow: hidden;
 }
-
 
 .videobox{
     border: 3px solid #0063FF;
     border-color: #0063FF;
     width: 200px;
     height: 200px;
+}
+
+#htvideo{
+    position: absolute;
+    left: -300px;
+    top: 200px;
+}
+
+.btn{
+    background-color: rgb(87, 93, 144);
+    border: none;
+    padding: 0.75rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.btn:hover{
+    background-color: rgb(117, 185, 190);
+}
+
+.camera_buttons{
+    position: relative;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img{
+    top: 30%;
+    transform: translateY(30%);
+    padding-right: 0.5rem;
+    height: 2rem;
+    width: 2rem;
 }

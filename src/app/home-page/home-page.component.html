@@ -1,8 +1,9 @@
+<body >
+<h1>Create a Dog Gallery</h1>
+
 <div>
-    <button (click)="goBack()">Go Back</button>
-    <button (click)="addDog()">New Dog</button>
-    <button (click)="goForward()">Go Next</button>
-    <button (click)="addDogToFavorites()">Add to favorites</button>
+    <app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
+    <div id="gesture" [innerHTML]="gesture"></div>    
 </div>
 
 <div class="image_holder">
@@ -11,13 +12,36 @@
 </div>
 
 <div>
-    <app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
-    <div [innerHTML]="gesture"></div>    
+    <Table class="function_table">
+        <tr>
+            <td><button class="btn" (click)="goBack()">Go Back</button></td>
+            <td><button class="btn" (click)="addDog()">New Dog</button></td>
+            <td><button class="btn" (click)="goForward()">Go Next</button></td>
+            <td><button class="btn" (click)="addDogToFavorites()">Add to favorites</button></td>
+            <td><button class="btn" (click)="openImage(img)">Expand Image</button></td>
+            <td><button class="btn" (click)="clearDogs()">Clear Dog Gallery</button></td>
+        </tr>
+        <tr>
+            <td><p class="hand_button">(Two Closed Hands)</p></td>
+            <td><p class="hand_button">(Two Pointing Hands)</p></td>
+            <td><p class="hand_button">(Two Open Hands)</p></td>
+            <td><p class="hand_button">(One Pointing Hand)</p></td>
+            <td><p class="hand_button">(One Hand Open, One Closed)</p></td>
+            <td><p class="hand_button">(One Hand Open, One Pointing)</p></td>
+            
+
+        </tr>
+    </Table>
 </div>
 
 <div>
-    <h1>My dogs</h1>
-    <div *ngFor="let item of favorites">
+    <h1>My Favorites</h1>
+    <div class="image_holder" *ngFor="let item of favorites">
         <img  class="landscape" src={{item}} (click)="openImage(item)"/>
     </div>
+    <table class="function_table">
+        <tr><td><button class="btn" (click)="clearFavorites()">Clear Favorites</button></td></tr>
+        <tr><td><p class="hand_button">(Once Hand Closed, One Pointing)</p></td></tr>
+    </table>
 </div>
+</body>
